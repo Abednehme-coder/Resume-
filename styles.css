@@ -1,0 +1,120 @@
+/* General Styles */
+html, body {
+    background-color: #09122C;
+    font-family: "Jersey 15", serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+    background: linear-gradient(90deg, #796b85 0%, #09122C 100%);
+}
+
+/* Text Styling */
+p, li, a {
+    font-size: large;
+    color: white;
+}
+
+h1, h2 {
+    color: #df614d;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+/* Profile Image Styling and Animation */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 20%;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+    transform: translate(0, 0) scale(1);
+    will-change: transform;
+}
+
+/* Sticky Footer Navigation Bar (hidden by default) */
+.footer-navbar {
+    background-color: #2978A0;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: -60px; /* hidden initially */
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.footer-navbar.show {
+    bottom: 0;
+    opacity: 1;
+}
+
+.footer-navbar a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.footer-navbar a:hover {
+    background-color: #872341;
+    border-radius: 5px;
+}
+
+/* Ensure page content doesn't get hidden behind footer */
+body {
+    padding-bottom: 60px;
+}
+
+/* Back-to-Top Button */
+#backToTop {
+    position: fixed;
+    bottom: -50px; /* hidden initially */
+    right: 20px;
+    background-color: #E17564;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    z-index: 1100;  /* Ensure it appears above the navigation bar */
+}
+
+#backToTop.show {
+    bottom: 70px; /* appears above footer */
+    opacity: 1;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    p, li, a {
+        font-size: medium;
+    }
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    .footer-navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
